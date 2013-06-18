@@ -34,7 +34,7 @@
 
         CLLocationCoordinate2D tmp;
         tmp.latitude = [[self.location objectForKey:@"latitude"] doubleValue];
-        tmp.longitude = [[self.location objectForKey:@"latitude"] doubleValue];
+        tmp.longitude = [[self.location objectForKey:@"longitude"] doubleValue];
         _coordinate = tmp;
     }
 
@@ -43,9 +43,7 @@
 
 - (NSString *)description {
     NSMutableString *description = [NSMutableString stringWithFormat:@"<%@: ", NSStringFromClass([self class])];
-    [description appendFormat:@"coordinate.latitude=%f", coordinate.latitude];
-    [description appendFormat:@", coordinate.longitude=%f", coordinate.longitude];
-    [description appendFormat:@", self.identifier=%@", self.identifier];
+    [description appendFormat:@"self.identifier=%@", self.identifier];
     [description appendFormat:@", self.location=%@", self.location];
     [description appendFormat:@", self.lines=%@", self.lines];
     [description appendFormat:@", self.coordinate.latitude=%f", self.coordinate.latitude];
