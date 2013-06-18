@@ -18,7 +18,7 @@
 @end
 
 
-@interface GCXStationLoader : NSObject
+@interface GCXStationLoader : NSObject<NSURLConnectionDataDelegate>
 
 @property(nonatomic, weak) id<GCXStationLoaderDelegate> delegate;
 

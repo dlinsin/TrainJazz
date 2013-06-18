@@ -14,6 +14,8 @@
 
 @interface GCXStationLoader ()
 @property(nonatomic, strong) RNTimer *timer;
+@property(nonatomic, strong) NSURLConnection *connection;
+@property(nonatomic, strong) id loadedData;
 @end
 
 @implementation GCXStationLoader
@@ -35,6 +37,23 @@
 
 - (void)doLoad {
     NSLog(@"Do Load called");
+
+    if (self.connection) {
+        [self.connection cancel];
+    }
+
+    NSString *url = [NSString stringWithFormat:@"http://google.com"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:10.0];
+    self.connection = [NSURLConnection connectionWithRequest:request delegate:self];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    [self.loadedData appendData:data];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    // TODO use self.loadedData
+
     NSData *jsonData = [[NSData alloc] initWithContentsOfFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"sample" ofType:@"json"]];
     NSError *error;
     NSArray *stationJSONArray = [(NSDictionary *) [NSJSONSerialization JSONObjectWithData:jsonData options:(NSJSONReadingOptions) 0 error:&error] objectForKey:@"stations"];
@@ -50,6 +69,12 @@
     }
 
     [self.delegate stationsLoaded:stations];
+
 }
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    // TODO error handling
+}
+
 
 @end
