@@ -16,6 +16,7 @@
 		6835E419255E4028B5EBC521 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6835EF95BED35964748D8755 /* CoreGraphics.framework */; };
 		6835E60BCA3F92354850FBA2 /* GCXStationLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835EB26D75957D2F31C99D6 /* GCXStationLoader.m */; };
 		6835E6E6688A4E114498B433 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6835E395DCABB0281F4E0EFD /* InfoPlist.strings */; };
+		6835E8C05F7D7FFEC21093BA /* GCXLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835E076399CFC5FC28D876A /* GCXLine.m */; };
 		6835E90A8811D193E09ED5C1 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6835EBDC0FEADFCF41BA3167 /* Default.png */; };
 		6835E96B250CB3AEE2AA9467 /* GCXStation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835E2C4DB88A4BE6B6B0DCF /* GCXStation.m */; };
 		6835EB3E57B69872477EBA6A /* GCXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835E6897034408809D92D53 /* GCXAppDelegate.m */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6835E076399CFC5FC28D876A /* GCXLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCXLine.m; sourceTree = "<group>"; };
 		6835E0DC1D1EF1DE51C0C5A6 /* TrainJazzz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainJazzz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6835E0FB9A556FE65497C065 /* GCXStationLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCXStationLoader.h; sourceTree = "<group>"; };
 		6835E1646A386A7022A18C31 /* GCXViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCXViewController.h; sourceTree = "<group>"; };
@@ -44,6 +46,7 @@
 		6835EA4B550F4C339914C872 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6835EAED3B09A2A45A4917D1 /* TrainJazzz-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "TrainJazzz-Info.plist"; sourceTree = "<group>"; };
 		6835EB26D75957D2F31C99D6 /* GCXStationLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCXStationLoader.m; sourceTree = "<group>"; };
+		6835EBA5956AC6927F545C92 /* GCXLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCXLine.h; sourceTree = "<group>"; };
 		6835EBDC0FEADFCF41BA3167 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		6835EC2A874D2E1B6C14F1F4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6835EE11B0A89F942E919F03 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -90,6 +93,8 @@
 				6835EB26D75957D2F31C99D6 /* GCXStationLoader.m */,
 				6835E0FB9A556FE65497C065 /* GCXStationLoader.h */,
 				6835ECA286D3F4B71D0A8251 /* RNTimer */,
+				6835E076399CFC5FC28D876A /* GCXLine.m */,
+				6835EBA5956AC6927F545C92 /* GCXLine.h */,
 			);
 			path = TrainJazzz;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				6835E96B250CB3AEE2AA9467 /* GCXStation.m in Sources */,
 				6835E60BCA3F92354850FBA2 /* GCXStationLoader.m in Sources */,
 				6835E0FF1C0C988CC53737DB /* RNTimer.m in Sources */,
+				6835E8C05F7D7FFEC21093BA /* GCXLine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

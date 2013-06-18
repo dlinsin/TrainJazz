@@ -17,10 +17,11 @@
 @property(nonatomic, strong) NSNumber *identifier;
 @property(nonatomic, strong) NSDictionary *location;
 @property(nonatomic, strong) NSArray *lines;
-@property(nonatomic, strong) NSNumber *ident;
 
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 
 - (id)initWithJson:(NSDictionary *)json;
+
+- (NSString *)description;
 
 @end

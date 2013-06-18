@@ -19,7 +19,11 @@
 @implementation GCXStationLoader
 
 - (void)startLoading {
-    [self.timer invalidate];
+    if (!self.timer) {
+        [self doLoad];
+    } else {
+        [self.timer invalidate];
+    }
     __weak id weakSelf = self;
     self.timer = [RNTimer repeatingTimerWithTimeInterval:30
                                                    block:^{
