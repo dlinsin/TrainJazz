@@ -14,7 +14,7 @@
 @implementation GCXStationLoader
 
 - (NSArray *)loadStations {
-    NSData *jsonData = [[NSData alloc] initWithContentsOfFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"product" ofType:@"json"]];
+    NSData *jsonData = [[NSData alloc] initWithContentsOfFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"sample" ofType:@"json"]];
     NSError *error;
     NSArray *stationJSONArray = [NSJSONSerialization JSONObjectWithData:jsonData options:(NSJSONReadingOptions) 0 error:&error];
 
