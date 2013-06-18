@@ -6,13 +6,16 @@
 //  Copyright (c) 2013 grandcentrix GmbH. All rights reserved.
 //
 
+#import <CoreGraphics/CoreGraphics.h>
 #import "GCXViewController.h"
 #import "GCXStationLoader.h"
+#import "GCXCircleAnnotationView.h"
 
 @interface GCXViewController ()
 
 @property(nonatomic, strong) MKMapView *mapView;
 @property(nonatomic, strong) GCXStationLoader *loader;
+@property(nonatomic, strong) NSArray *stations;
 @end
 
 @implementation GCXViewController
@@ -50,8 +53,10 @@
 
 // will be called frequently with station updates
 - (void)stationsLoaded:(NSArray *)stations {
-    // TODO use the stations
     NSLog(@"Loaded: %@", stations);
+    self.stations = stations;
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    [self.mapView addAnnotations:self.stations];
 }
 
 #pragma mark -
@@ -66,9 +71,10 @@
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
-    // dequeueReusableAnnotationViewWithIdentifier:
-    // create
-    return nil;
+    NSLog(@"requesting annotation view");
+    MKAnnotationView *view = [[GCXCircleAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Blah"];
+
+    return view;
 }
 
 

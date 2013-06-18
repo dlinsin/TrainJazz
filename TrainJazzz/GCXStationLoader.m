@@ -43,7 +43,7 @@
     }
 
     NSString *url = [NSString stringWithFormat:@"http://google.com"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:10.0];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:1.0];
     self.connection = [NSURLConnection connectionWithRequest:request delegate:self];
 }
 
@@ -52,6 +52,7 @@
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    NSLog(@"Finished loading");
     // TODO use self.loadedData
 
     NSData *jsonData = [[NSData alloc] initWithContentsOfFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"sample" ofType:@"json"]];
@@ -73,7 +74,9 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    NSLog(@"Failed loading");
     // TODO error handling
+    [self connectionDidFinishLoading:connection];
 }
 
 
