@@ -12,6 +12,7 @@
 @interface GCXViewController ()
 
 @property(nonatomic, strong) MKMapView *mapView;
+@property(nonatomic, strong) GCXStationLoader *loader;
 @end
 
 @implementation GCXViewController
@@ -19,9 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    GCXStationLoader *loader = [[GCXStationLoader alloc] init];
-    NSArray *stations = [loader loadStations];
-
+    self.loader = [[GCXStationLoader alloc] init];
+    self.loader.delegate = self;
 
     self.mapView = [[MKMapView alloc] initWithFrame:CGRectZero];
     CLLocationCoordinate2D startCoordinates;
@@ -38,6 +38,23 @@
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[map]|" options:(NSLayoutFormatOptions) 0 metrics:nil views:viewsDictionary]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[map]|" options:(NSLayoutFormatOptions) 0 metrics:nil views:viewsDictionary]];
 }
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.loader startLoading];
+}
+
+
+#pragma mark -
+#pragma mark - GCXStationLoaderDelegate
+
+// will be called frequently with station updates
+- (void)stationsLoaded:(NSArray *)stations {
+    // TODO use the stations
+}
+
+#pragma mark -
+#pragma mark - MKMapViewDelegate
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
     // change on zoom

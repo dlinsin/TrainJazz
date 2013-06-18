@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "GCXStationLoader.h"
 
-@interface GCXViewController : UIViewController <MKMapViewDelegate>
+@class GCXStationLoader;
+
+@interface GCXViewController : UIViewController <MKMapViewDelegate, GCXStationLoaderDelegate>
 
 @end

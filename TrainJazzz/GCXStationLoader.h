@@ -9,9 +9,17 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol GCXStationLoaderDelegate
+
+- (void)stationsLoaded:(NSArray *)stations;
+
+@end
+
 
 @interface GCXStationLoader : NSObject
 
-- (NSArray *)loadStations;
+@property(nonatomic, weak) id<GCXStationLoaderDelegate> delegate;
+
+- (void)startLoading;
 
 @end

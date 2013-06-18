@@ -13,7 +13,10 @@
 
 @implementation GCXStationLoader
 
-- (NSArray *)loadStations {
+- (void)startLoading {
+    // TODO start
+
+
     NSData *jsonData = [[NSData alloc] initWithContentsOfFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"sample" ofType:@"json"]];
     NSError *error;
     NSArray *stationJSONArray = [NSJSONSerialization JSONObjectWithData:jsonData options:(NSJSONReadingOptions) 0 error:&error];
@@ -28,7 +31,7 @@
         [stations addObject:[[GCXStation alloc] initWithJson:stationDict]];
     }
 
-    return stations;
+    [self.delegate stationsLoaded:stations];
 }
 
 @end
