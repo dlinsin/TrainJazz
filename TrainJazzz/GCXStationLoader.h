@@ -9,6 +9,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class RNTimer;
+
 @protocol GCXStationLoaderDelegate
 
 - (void)stationsLoaded:(NSArray *)stations;

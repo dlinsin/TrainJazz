@@ -9,17 +9,31 @@
 
 #import "GCXStationLoader.h"
 #import "GCXStation.h"
+#import "RNTimer.h"
 
+
+@interface GCXStationLoader ()
+@property(nonatomic, strong) RNTimer *timer;
+@end
 
 @implementation GCXStationLoader
 
 - (void)startLoading {
-    // TODO start
+    [self.timer invalidate];
+    __weak id weakSelf = self;
+    self.timer = [RNTimer repeatingTimerWithTimeInterval:30
+                                                   block:^{
+                                                       [weakSelf doLoad];
+                                                   }];
 
 
+}
+
+- (void)doLoad {
+    NSLog(@"Do Load called");
     NSData *jsonData = [[NSData alloc] initWithContentsOfFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"sample" ofType:@"json"]];
     NSError *error;
-    NSArray *stationJSONArray = [NSJSONSerialization JSONObjectWithData:jsonData options:(NSJSONReadingOptions) 0 error:&error];
+    NSArray *stationJSONArray = [(NSDictionary *) [NSJSONSerialization JSONObjectWithData:jsonData options:(NSJSONReadingOptions) 0 error:&error] objectForKey:@"stations"];
 
     if (error) {
         NSLog(@"Failed parsing");

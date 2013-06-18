@@ -51,6 +51,7 @@
 // will be called frequently with station updates
 - (void)stationsLoaded:(NSArray *)stations {
     // TODO use the stations
+    NSLog(@"Loaded: %@", stations);
 }
 
 #pragma mark -

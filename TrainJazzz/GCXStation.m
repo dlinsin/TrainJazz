@@ -25,8 +25,8 @@
         }
 
         CLLocationCoordinate2D tmp;
-        tmp.latitude = [(NSNumber*)[self.location objectAtIndex:0] doubleValue];
-        tmp.longitude = [(NSNumber*)[self.location objectAtIndex:1] doubleValue];
+        tmp.latitude = [[self.location objectForKey:@"latitude"] doubleValue];
+        tmp.longitude = [[self.location objectForKey:@"latitude"] doubleValue];
         _coordinate = tmp;
     }
 

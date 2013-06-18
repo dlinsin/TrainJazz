@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6835E073F0307D532F43E033 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835EEBA8E22F8A73AC2D4CF /* main.m */; };
+		6835E0FF1C0C988CC53737DB /* RNTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835E6E5B4AAD66A25E7921E /* RNTimer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6835E163EB4C791262EBE024 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6835EFFC1127A4DBD80BFA71 /* Default@2x.png */; };
 		6835E20E553F5083CD1C60DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6835E9FB007C46C994B5236C /* UIKit.framework */; };
 		6835E279EC7B79460EE68194 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6835EE11B0A89F942E919F03 /* MapKit.framework */; };
@@ -32,9 +33,11 @@
 		6835E2DCF8E766E1AFA269C2 /* GCXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCXAppDelegate.h; sourceTree = "<group>"; };
 		6835E5C9D281F14E0370E4B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GCXViewController.xib; sourceTree = "<group>"; };
 		6835E6897034408809D92D53 /* GCXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCXAppDelegate.m; sourceTree = "<group>"; };
+		6835E6E5B4AAD66A25E7921E /* RNTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNTimer.m; sourceTree = "<group>"; };
 		6835E7DBAE42176ECA44B578 /* GCXViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCXViewController.m; sourceTree = "<group>"; };
 		6835E84FCD58A0D0FE1E57B7 /* sample.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = sample.json; sourceTree = "<group>"; };
 		6835E886BE812797668BD125 /* TrainJazzz-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TrainJazzz-Prefix.pch"; sourceTree = "<group>"; };
+		6835E9E3503398241F386BD9 /* RNTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNTimer.h; sourceTree = "<group>"; };
 		6835E9FB007C46C994B5236C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6835EA0B00F4BD91BA374F19 /* GCXStation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCXStation.h; sourceTree = "<group>"; };
 		6835EA466EDE400EA3AF9759 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -86,6 +89,7 @@
 				6835EA0B00F4BD91BA374F19 /* GCXStation.h */,
 				6835EB26D75957D2F31C99D6 /* GCXStationLoader.m */,
 				6835E0FB9A556FE65497C065 /* GCXStationLoader.h */,
+				6835ECA286D3F4B71D0A8251 /* RNTimer */,
 			);
 			path = TrainJazzz;
 			sourceTree = "<group>";
@@ -123,6 +127,16 @@
 				6835E19B7B4695C22292B778 /* TrainJazzz */,
 			);
 			sourceTree = "<group>";
+		};
+		6835ECA286D3F4B71D0A8251 /* RNTimer */ = {
+			isa = PBXGroup;
+			children = (
+				6835E9E3503398241F386BD9 /* RNTimer.h */,
+				6835E6E5B4AAD66A25E7921E /* RNTimer.m */,
+			);
+			name = RNTimer;
+			path = RNTimer/RNTimer;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -195,6 +209,7 @@
 				6835EFBCD535B7E118802E3B /* GCXViewController.m in Sources */,
 				6835E96B250CB3AEE2AA9467 /* GCXStation.m in Sources */,
 				6835E60BCA3F92354850FBA2 /* GCXStationLoader.m in Sources */,
+				6835E0FF1C0C988CC53737DB /* RNTimer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +323,7 @@
 				6835EA552C2118E14C097082 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6835E918BB78582B64F529D1 /* Build configuration list for PBXProject "TrainJazzz" */ = {
 			isa = XCConfigurationList;

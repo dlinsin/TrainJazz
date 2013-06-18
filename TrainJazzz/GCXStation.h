@@ -10,12 +10,12 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
-
 @interface GCXStation : NSObject<MKAnnotation> {
     CLLocationCoordinate2D coordinate;
 }
 
-@property(nonatomic, strong) NSArray *location;
+@property(nonatomic, strong) NSNumber *identifier;
+@property(nonatomic, strong) NSDictionary *location;
 @property(nonatomic, strong) NSArray *lines;
 @property(nonatomic, strong) NSNumber *ident;
 

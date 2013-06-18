@@ -1,0 +1,3 @@
+[submodule "RNTimer"]
+	path = RNTimer
+	url = git@github.com:rnapier/RNTimer.git
