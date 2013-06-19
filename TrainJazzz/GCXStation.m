@@ -53,28 +53,4 @@
     return description;
 }
 
-- (BOOL)isEqual:(id)other {
-    if (other == self)
-        return YES;
-    if (!other || ![[other class] isEqual:[self class]])
-        return NO;
-
-    return [self isEqualToStation:other];
-}
-
-- (BOOL)isEqualToStation:(GCXStation *)station {
-    if (self == station)
-        return YES;
-    if (station == nil)
-        return NO;
-    if (self.identifier != station.identifier && ![self.identifier isEqualToNumber:station.identifier])
-        return NO;
-    return YES;
-}
-
-- (NSUInteger)hash {
-    return [self.identifier hash];
-}
-
-
 @end

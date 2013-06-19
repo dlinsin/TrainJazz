@@ -23,10 +23,4 @@
 
 - (NSString *)description;
 
-- (BOOL)isEqual:(id)other;
-
-- (BOOL)isEqualToStation:(GCXStation *)station;
-
-- (NSUInteger)hash;
-
 @end
