@@ -92,6 +92,7 @@
     NSLog(@"requesting annotation view");
     // create
     static NSString *AnnotationViewID = @"AnnotationView";
+    // TODO rausfinden ob linie oder station und dann farbe rausfinden
     MKAnnotationView *annotationView = [[GCXCircleAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
 
 //    MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
