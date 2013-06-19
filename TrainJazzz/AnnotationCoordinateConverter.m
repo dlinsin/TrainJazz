@@ -53,7 +53,7 @@
     for (GCXStation *station in annotations) {
         NSMutableArray *lines = station.lines.mutableCopy;
         
-        double distance = 300 * lines.count / 2.0;
+        double distance = 150 * lines.count / 2.0;
         double radiansBetweenAnnotations = (M_PI * 2) / lines.count;
         
         for (int i = 0; i < lines.count; i++) {

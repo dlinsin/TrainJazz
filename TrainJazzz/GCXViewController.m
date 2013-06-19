@@ -52,7 +52,7 @@
     self.mapView.delegate = self;
     [self.mapView setTranslatesAutoresizingMaskIntoConstraints:NO];
     
-    
+    currentZoomLevel = 12;
 
 
     [self.view addSubview:self.mapView];
@@ -124,7 +124,7 @@
     
     NSArray *stations = clusteredStations;
     
-    showExpanded = currentZoomLevel < zoomlevel;
+    showExpanded = currentZoomLevel <= zoomlevel;
     if (showExpanded) {
         //zoom in -> expand stations
         stations = expandedStations;
@@ -137,7 +137,7 @@
     [self.mapView removeAnnotations:self.mapView.annotations];
     [self.mapView addAnnotations:stations];
     
-    currentZoomLevel = zoomlevel;
+//    currentZoomLevel = zoomlevel;
     
 }
 
