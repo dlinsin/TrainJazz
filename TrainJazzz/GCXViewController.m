@@ -11,6 +11,7 @@
 #import "GCXStationLoader.h"
 #import "AnnotationCoordinateConverter.h"
 #import "MKMapView+ZoomLevel.h"
+#import "GCXCircleAnnotationView.h"
 
 @interface GCXViewController ()
 
@@ -91,17 +92,19 @@
     NSLog(@"requesting annotation view");
     // create
     static NSString *AnnotationViewID = @"AnnotationView";
-    MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
-    
-    if (annotationView == nil) {
-        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
-    }
+    MKAnnotationView *annotationView = [[GCXCircleAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
 
+//    MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
     
-    annotationView.image = [UIImage imageNamed:@"discover_map_icon-item-position"];
-    annotationView.annotation = annotation;
-    annotationView.canShowCallout = YES;
-//    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+//    if (annotationView == nil) {
+//        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
+//    }
+//
+//
+//    annotationView.image = [UIImage imageNamed:@"discover_map_icon-item-position"];
+//    annotationView.annotation = annotation;
+//    annotationView.canShowCallout = YES;
+////    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     
     return annotationView;    
 }

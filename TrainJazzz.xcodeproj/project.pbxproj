@@ -15,6 +15,7 @@
 		6835E343170C92987F99B4DA /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 6835E84FCD58A0D0FE1E57B7 /* sample.json */; };
 		6835E34D15548CDECD316284 /* PBXBuildFile */ = {isa = PBXBuildFile; fileRef = 6835E067C3FD959E8BC7C0B0 /* GCXLineColor.m */; };
 		6835E419255E4028B5EBC521 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6835EF95BED35964748D8755 /* CoreGraphics.framework */; };
+		6835E5931B69A9785450EC05 /* GCXCircleAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835EC67954E5D72C8BA173D /* GCXCircleAnnotationView.m */; };
 		6835E60BCA3F92354850FBA2 /* GCXStationLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835EB26D75957D2F31C99D6 /* GCXStationLoader.m */; };
 		6835E6E6688A4E114498B433 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6835E395DCABB0281F4E0EFD /* InfoPlist.strings */; };
 		6835E8C05F7D7FFEC21093BA /* GCXLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835E076399CFC5FC28D876A /* GCXLine.m */; };
@@ -61,6 +62,7 @@
 		6835EBA5956AC6927F545C92 /* GCXLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCXLine.h; sourceTree = "<group>"; };
 		6835EBDC0FEADFCF41BA3167 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		6835EC2A874D2E1B6C14F1F4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		6835EC67954E5D72C8BA173D /* GCXCircleAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCXCircleAnnotationView.m; sourceTree = "<group>"; };
 		6835EE11B0A89F942E919F03 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6835EEBA8E22F8A73AC2D4CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6835EF95BED35964748D8755 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -120,6 +122,7 @@
 				6835E89096980DBE94802928 /* GCXCircleAnnotationView.h */,
 				6835E067C3FD959E8BC7C0B0 /* GCXLineColor.m */,
 				D6305B8A1770FC4200645AB6 /* AnnotationCoordinateConverter.m */,
+				6835EC67954E5D72C8BA173D /* GCXCircleAnnotationView.m */,
 			);
 			path = TrainJazzz;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				6835E8C05F7D7FFEC21093BA /* GCXLine.m in Sources */,
 				D6305B8B1770FC4200645AB6 /* AnnotationCoordinateConverter.m in Sources */,
 				D6305B9017717FCF00645AB6 /* MKMapView+ZoomLevel.m in Sources */,
+				6835E5931B69A9785450EC05 /* GCXCircleAnnotationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
