@@ -6,9 +6,12 @@
 //  Copyright (c) 2013 grandcentrix GmbH. All rights reserved.
 //
 
+
 #import "AnnotationCoordinateConverter.h"
 #import "GCXStation.h"
 #import "GCXLine.h"
+
+#define kEarthRadius     6378100
 
 @implementation AnnotationCoordinateConverter
 
@@ -18,11 +21,9 @@
     
     for (NSValue *coordinateValue in coordinateValuesToAnnotations.allKeys) {
         NSMutableArray *outletsAtLocation = coordinateValuesToAnnotations[coordinateValue];
-//        if (outletsAtLocation.count > 1) {
-            CLLocationCoordinate2D coordinate;
-            [coordinateValue getValue:&coordinate];
-            [self repositionAnnotations:outletsAtLocation toAvoidClashAtCoordination:coordinate];
-//        }
+        CLLocationCoordinate2D coordinate;
+        [coordinateValue getValue:&coordinate];
+        [self repositionAnnotations:outletsAtLocation toAvoidClashAtCoordination:coordinate];
     }
 }
 
@@ -46,26 +47,6 @@
     }
     return result;
 }
-
-//+ (NSArray *)clusterAnnotationsByLocationValue:(NSArray *)annotations {
-//
-//    NSDictionary *result = [self groupAnnotationsByLocationValue:annotations];
-//    
-//    NSArray *items = result.allValues;
-//    for (NSArray annotations in items) {
-//        
-//        
-//        NSMutableArray *annotationsAtLocation = result[coordinateValue];
-//        if (!annotationsAtLocation) {
-//            annotationsAtLocation = [NSMutableArray array];
-//            result[coordinateValue] = annotationsAtLocation;
-//        }
-//        
-//        [annotationsAtLocation addObject:annotation];
-//    }
-//    return result;
-//}
-
 
 + (void)repositionAnnotations:(NSMutableArray *)annotations toAvoidClashAtCoordination:(CLLocationCoordinate2D)coordinate {
     
@@ -91,7 +72,7 @@
     double coordinateLatitudeInRadians = coordinate.latitude * M_PI / 180;
     double coordinateLongitudeInRadians = coordinate.longitude * M_PI / 180;
     
-    double distanceComparedToEarth = distanceInMetres / 6378100;
+    double distanceComparedToEarth = distanceInMetres / kEarthRadius;
     
     double resultLatitudeInRadians = asin(sin(coordinateLatitudeInRadians) * cos(distanceComparedToEarth) + cos(coordinateLatitudeInRadians) * sin(distanceComparedToEarth) * cos(bearingInRadians));
     double resultLongitudeInRadians = coordinateLongitudeInRadians + atan2(sin(bearingInRadians) * sin(distanceComparedToEarth) * cos(coordinateLatitudeInRadians), cos(distanceComparedToEarth) - sin(coordinateLatitudeInRadians) * sin(resultLatitudeInRadians));
