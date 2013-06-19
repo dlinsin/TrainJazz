@@ -10,9 +10,9 @@
 #import "AnnotationCoordinateConverter.h"
 #import "MKMapView+ZoomLevel.h"
 #import "GCXCircleAnnotationView.h"
-#import "GCXStation.h"
-#import "GCXLine.h"
 #import "GCXLineColor.h"
+#import "GCXLine.h"
+#import "GCXStation.h"
 
 @interface GCXViewController ()
 
@@ -24,6 +24,10 @@
 @implementation GCXViewController
 {
     NSArray *allStations;
+    NSArray *clusteredStations;
+    NSArray *expandedStations;
+    
+    NSUInteger currentZoomLevel;
 }
 
 - (void)viewDidLoad {
@@ -34,11 +38,17 @@
 
     self.mapView = [[MKMapView alloc] initWithFrame:CGRectZero];
     CLLocationCoordinate2D startCoordinates;
+    
     startCoordinates.latitude = 50.937531;
     startCoordinates.longitude = 6.960279;
     self.mapView.region = MKCoordinateRegionMakeWithDistance(startCoordinates, 10000, 10000);
+    currentZoomLevel = [self.mapView zoomLevel];
+//    [self.mapView setCenterCoordinate:startCoordinates zoomLevel:currentZoomLevel animated:NO];
     self.mapView.delegate = self;
     [self.mapView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+    
+
 
     [self.view addSubview:self.mapView];
 
@@ -59,16 +69,32 @@
 
 // will be called frequently with station updates
 - (void)stationsLoaded:(NSArray *)stations {
-    NSLog(@"Loaded: %@", stations);
+//    NSLog(@"Loaded: %@", stations);
     
-    allStations = stations;
     // add map annotations
     [self.mapView removeAnnotations:self.mapView.annotations];
     [AnnotationCoordinateConverter mutateCoordinatesOfClashingAnnotations:stations];
-    NSLog(@"converted: %@", stations);
-
-    [self.mapView addAnnotations:stations];
-    //    [self.mapView setCenterCoordinate:self.mapView.userLocation.coordinate zoomLevel:10 animated:NO];
+    
+    clusteredStations = stations.copy;
+    NSLog(@"clusteredStations: %@", clusteredStations);
+    
+    NSMutableArray *stationsAndLines = [[NSMutableArray alloc] init];
+    for (GCXStation *station in stations) {
+        [stationsAndLines addObject:station];
+        for (GCXStation *line in station.lines) {
+            [stationsAndLines addObject:line];
+        }
+    }
+    expandedStations = stationsAndLines;
+    
+    NSLog(@"expandedStations: %@", expandedStations);
+    
+    [self.mapView addAnnotations:clusteredStations];
+//    CLLocationCoordinate2D startCoordinates;
+//    
+//    startCoordinates.latitude = 50.937531;
+//    startCoordinates.longitude = 6.960279;
+//    [self.mapView setCenterCoordinate:self.mapView.userLocation.coordinate zoomLevel:10 animated:NO];
 }
 
 
@@ -79,9 +105,26 @@
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
     // change on zoom
     
+    NSArray *stations = clusteredStations;
     NSUInteger zoomlevel = [mapView zoomLevel];
     
+    if (zoomlevel == currentZoomLevel) {
+        return;
+    }
     
+    if (currentZoomLevel < zoomlevel) {
+        //zoom in -> expand stations
+        stations = expandedStations;
+        
+    } else {
+        //zoom out -> collapse stations
+        stations = clusteredStations;
+    }
+    
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    [self.mapView addAnnotations:stations];
+    
+    currentZoomLevel = zoomlevel;
     
 }
 
@@ -92,32 +135,21 @@
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
     NSLog(@"requesting annotation view");
     static NSString *AnnotationViewID = @"AnnotationView";
-    MKAnnotationView *annotationView;
-    if ([annotation isKindOfClass:[GCXStation class]]) {
-        annotationView = [[GCXCircleAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
-    } else {
-        NSString *line = [(GCXLine *) annotation line];
-        NSString *time = [(GCXLine *) annotation latency];
-        UIColor *color = [[GCXLineColor sharedInstance] colorForLine:line];
-        BOOL halo = YES;
-        if ([time isEqualToString:@"0"]) {
-            halo = NO;
-        }
-        annotationView = [[GCXCircleAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID color:color halo:halo];
-    }
     // TODO rausfinden ob linie oder station und dann farbe rausfinden
+    MKAnnotationView *annotationView = [[GCXCircleAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
 
 //    MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
     
-//    if (annotationView == nil) {
-//        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
-//    }
-//
-//
-//    annotationView.image = [UIImage imageNamed:@"discover_map_icon-item-position"];
-//    annotationView.annotation = annotation;
-//    annotationView.canShowCallout = YES;
-////    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    if ([annotation isKindOfClass:[GCXStation class]]) {
+        annotationView = [[GCXCircleAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
+        
+    } else {
+        GCXLine *line = (GCXLine*)annotation;
+        UIColor *color = [UIColor redColor];//[[GCXLineColor sharedInstance] colorForLine:line.line];
+        BOOL showHalo = [line.latency intValue] >= 2;
+        annotationView = [[GCXCircleAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID color:color halo:showHalo];
+    }
+
     
     return annotationView;    
 }

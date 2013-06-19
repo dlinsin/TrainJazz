@@ -8,12 +8,16 @@
 
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
 
 
-@interface GCXLine : NSObject
+@interface GCXLine : NSObject<MKAnnotation>
 
+@property(nonatomic, strong) NSString *title;
 @property(nonatomic, strong) NSString *line;
 @property(nonatomic, strong) NSString *latency;
+
+@property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 
 - (id)initWithJson:(NSDictionary *)json;
 

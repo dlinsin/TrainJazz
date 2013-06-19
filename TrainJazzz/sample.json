@@ -27,65 +27,21 @@
                 {
                     "line": "3",
                     "latency": "0"
+                },
+                {
+                      "line": "3",
+                      "latency": "0"
+                },
+                {
+                      "line": "3",
+                      "latency": "0"
                 }
             ],
             "location": {
                 "latitude": "50.9369972",
                 "longitude": "6.9087698"
             }
-        },
-            {
-                 "identifier": 3,
-                 "lines": [
-                           {
-                           "line": "16",
-                           "latency": "2"
-                           },
-                           {
-                           "line": "3",
-                           "latency": "0"
-                           }
-                           ],
-                 "location": {
-                 "latitude": "50.9369972",
-                 "longitude": "6.9087698"
-                 }
-        },
-        {
-                 "identifier": 4,
-                 "lines": [
-                           {
-                           "line": "16",
-                           "latency": "2"
-                           },
-                           {
-                           "line": "3",
-                           "latency": "0"
-                           }
-                           ],
-                 "location": {
-                 "latitude": "50.9369972",
-                 "longitude": "6.9087698"
-                 }
-        },
-                 {
-                 "identifier": 5,
-                 "lines": [
-                           {
-                           "line": "16",
-                           "latency": "2"
-                           },
-                           {
-                           "line": "3",
-                           "latency": "0"
-                           }
-                           ],
-                 "location": {
-                 "latitude": "50.9369972",
-                 "longitude": "6.9087698"
-                 }
-        }
-
+        } 
                  
     ]
 }

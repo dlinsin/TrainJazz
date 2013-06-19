@@ -7,6 +7,8 @@
 //
 
 #import "AnnotationCoordinateConverter.h"
+#import "GCXStation.h"
+#import "GCXLine.h"
 
 @implementation AnnotationCoordinateConverter
 
@@ -16,11 +18,11 @@
     
     for (NSValue *coordinateValue in coordinateValuesToAnnotations.allKeys) {
         NSMutableArray *outletsAtLocation = coordinateValuesToAnnotations[coordinateValue];
-        if (outletsAtLocation.count > 1) {
+//        if (outletsAtLocation.count > 1) {
             CLLocationCoordinate2D coordinate;
             [coordinateValue getValue:&coordinate];
             [self repositionAnnotations:outletsAtLocation toAvoidClashAtCoordination:coordinate];
-        }
+//        }
     }
 }
 
@@ -45,18 +47,42 @@
     return result;
 }
 
+//+ (NSArray *)clusterAnnotationsByLocationValue:(NSArray *)annotations {
+//
+//    NSDictionary *result = [self groupAnnotationsByLocationValue:annotations];
+//    
+//    NSArray *items = result.allValues;
+//    for (NSArray annotations in items) {
+//        
+//        
+//        NSMutableArray *annotationsAtLocation = result[coordinateValue];
+//        if (!annotationsAtLocation) {
+//            annotationsAtLocation = [NSMutableArray array];
+//            result[coordinateValue] = annotationsAtLocation;
+//        }
+//        
+//        [annotationsAtLocation addObject:annotation];
+//    }
+//    return result;
+//}
+
+
 + (void)repositionAnnotations:(NSMutableArray *)annotations toAvoidClashAtCoordination:(CLLocationCoordinate2D)coordinate {
     
-    double distance = 300 * annotations.count / 2.0;
-    double radiansBetweenAnnotations = (M_PI * 2) / annotations.count;
-    
-    for (int i = 0; i < annotations.count; i++) {
+    for (GCXStation *station in annotations) {
+        NSMutableArray *lines = station.lines.mutableCopy;
         
-        double heading = radiansBetweenAnnotations * i;
-        CLLocationCoordinate2D newCoordinate = [self calculateCoordinateFrom:coordinate onBearing:heading atDistance:distance];
+        double distance = 300 * lines.count / 2.0;
+        double radiansBetweenAnnotations = (M_PI * 2) / lines.count;
         
-        id <MKAnnotation> annotation = annotations[i];
-        annotation.coordinate = newCoordinate;
+        for (int i = 0; i < lines.count; i++) {
+            
+            double heading = radiansBetweenAnnotations * i;
+            CLLocationCoordinate2D newCoordinate = [self calculateCoordinateFrom:coordinate onBearing:heading atDistance:distance];
+            
+            id <MKAnnotation> annotation = lines[i];
+            annotation.coordinate = newCoordinate;
+        }
     }
 }
 

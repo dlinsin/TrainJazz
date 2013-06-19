@@ -32,6 +32,8 @@
     NSMutableString *description = [NSMutableString stringWithFormat:@"<%@: ", NSStringFromClass([self class])];
     [description appendFormat:@"self.line=%@", self.line];
     [description appendFormat:@", self.latency=%@", self.latency];
+    [description appendFormat:@", self.coordinate.latitude=%f", self.coordinate.latitude];
+    [description appendFormat:@", self.coordinate.longitude=%f", self.coordinate.longitude];
     [description appendString:@">"];
     return description;
 }
