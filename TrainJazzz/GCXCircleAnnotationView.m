@@ -19,7 +19,7 @@
 
 @implementation GCXCircleAnnotationView
 
-- (id)initWithAnnotation:(id <MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier color:(UIColor *)color halo:(BOOL)showHalo number:(NSInteger)number{
+- (id)initWithAnnotation:(id <MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier color:(UIColor *)color halo:(BOOL)showHalo {
     self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
     if (self) {
         CGRect myFrame = self.frame;
@@ -30,6 +30,23 @@
         
         _color = color;
         _halo = showHalo;
+        _number = -1;
+    }
+
+    return self;
+}
+
+- (id)initWithAnnotation:(id <MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier number:(NSInteger)number {
+    self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
+    if (self) {
+        CGRect myFrame = self.frame;
+        myFrame.size.width = 100;
+        myFrame.size.height = 100;
+        self.frame = myFrame;
+        self.opaque = NO;
+
+        _color = [UIColor blackColor];
+        _halo = NO;
         _number = number;
     }
 
