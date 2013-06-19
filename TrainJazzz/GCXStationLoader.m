@@ -43,8 +43,8 @@
         [self.connection cancel];
     }
 
-    NSString *url = [NSString stringWithFormat:@"http://10.197.197.210:9000/test"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:1.0];
+    NSString *url = [NSString stringWithFormat:@"http://172.20.10.9:9000/test"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:5.0];
     self.connection = [NSURLConnection connectionWithRequest:request delegate:self];
 }
 
@@ -54,7 +54,6 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     NSLog(@"Finished loading");
-    // TODO use self.loadedData
 
     NSData *jsonData = [[NSData alloc] initWithContentsOfFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"sample" ofType:@"json"]]; //self.loadedData;
     NSError *error;
@@ -67,6 +66,9 @@
     NSMutableArray *stations = [NSMutableArray array];
 
     for (NSDictionary *stationDict in stationJSONArray) {
+        if ([[stationDict objectForKey:@"identifier"] integerValue] == 3) {
+            continue;
+        }
         [stations addObject:[[GCXStation alloc] initWithJson:stationDict]];
     }
 

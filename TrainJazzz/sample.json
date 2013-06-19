@@ -1,15 +1,36 @@
 {
     "stations": [
         {
-            "identifier": 1,
+            "identifier": 0,
             "lines": [
                 {
-                    "line": "18",
+                    "line": "5",
+                    "latency": "0"
+                },
+                {
+                    "line": "16",
                     "latency": "2"
                 },
                 {
-                    "line": "4",
-                    "latency": "0"
+                    "line": "18",
+                    "latency": "3"
+                }
+            ],
+            "location": {
+                "latitude": "50.9418465",
+                "longitude": "6.9556245"
+            }
+        },
+        {
+            "identifier": 1,
+            "lines": [
+                {
+                    "line": "13",
+                    "latency": "2"
+                },
+                {
+                    "line": "13",
+                    "latency": "2"
                 }
             ],
             "location": {
@@ -21,27 +42,149 @@
             "identifier": 2,
             "lines": [
                 {
-                    "line": "16",
-                    "latency": "2"
-                },
-                {
-                    "line": "3",
+                    "line": "9",
                     "latency": "0"
                 },
                 {
-                      "line": "3",
-                      "latency": "2"
+                    "line": "1",
+                    "latency": "0"
                 },
                 {
-                      "line": "18",
-                      "latency": "0"
+                    "line": "1",
+                    "latency": "3"
+                },
+                {
+                    "line": "9",
+                    "latency": "3"
                 }
             ],
             "location": {
-                "latitude": "50.9369972",
-                "longitude": "6.9087698"
+                "latitude": "50.94116",
+                "longitude": "6.97522"
             }
-        } 
-                 
+        },
+        {
+            "identifier": 3,
+            "lines": [],
+            "location": null
+        },
+        {
+            "identifier": 4,
+            "lines": [
+                {
+                    "line": "12",
+                    "latency": "0"
+                },
+                {
+                    "line": "15",
+                    "latency": "0"
+                },
+                {
+                    "line": "15",
+                    "latency": "0"
+                }
+            ],
+            "location": {
+                "latitude": "50.9490727",
+                "longitude": "6.9517116"
+            }
+        },
+        {
+            "identifier": 5,
+            "lines": [
+                {
+                    "line": "16",
+                    "latency": "0"
+                },
+                {
+                    "line": "16",
+                    "latency": "3"
+                }
+            ],
+            "location": {
+                "latitude": "50.9853131",
+                "longitude": "6.9612189"
+            }
+        },
+        {
+            "identifier": 6,
+            "lines": [
+                {
+                    "line": "16",
+                    "latency": "0"
+                },
+                {
+                    "line": "15",
+                    "latency": "4"
+                }
+            ],
+            "location": {
+                "latitude": "50.921257",
+                "longitude": "6.960531"
+            }
+        },
+        {
+            "identifier": 7,
+            "lines": [
+                {
+                    "line": "16",
+                    "latency": "0"
+                },
+                {
+                    "line": "9",
+                    "latency": "0"
+                },
+                {
+                    "line": "4",
+                    "latency": "0"
+                }
+            ],
+            "location": {
+                "latitude": "50.9361047",
+                "longitude": "6.948709"
+            }
+        },
+        {
+            "identifier": 8,
+            "lines": [
+                {
+                    "line": "15",
+                    "latency": "0"
+                },
+                {
+                    "line": "12",
+                    "latency": "0"
+                },
+                {
+                    "line": "5",
+                    "latency": "2"
+                },
+                {
+                    "line": "15",
+                    "latency": "4"
+                }
+            ],
+            "location": {
+                "latitude": "50.9403716",
+                "longitude": "6.939776"
+            }
+        },
+        {
+            "identifier": 9,
+            "lines": [
+                {
+                    "line": "12",
+                    "latency": "0"
+                },
+                {
+                    "line": "15",
+                    "latency": "2"
+                }
+            ],
+            "location": {
+                "latitude": "50.9362098",
+                "longitude": "6.939754"
+            }
+        }
     ]
 }

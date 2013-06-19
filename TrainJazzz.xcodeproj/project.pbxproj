@@ -21,6 +21,7 @@
 		6835E90A8811D193E09ED5C1 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6835EBDC0FEADFCF41BA3167 /* Default.png */; };
 		6835E9167C39117F6061DDF3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6835EB025DE7351C146405C7 /* QuartzCore.framework */; };
 		6835E96B250CB3AEE2AA9467 /* GCXStation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835E2C4DB88A4BE6B6B0DCF /* GCXStation.m */; };
+		6835EAF8D1799D28F804DE69 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6835EB4738A893703DE870D8 /* Icon.png */; };
 		6835EB3E57B69872477EBA6A /* GCXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835E6897034408809D92D53 /* GCXAppDelegate.m */; };
 		6835EBC34670E585B78518CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6835EA466EDE400EA3AF9759 /* Foundation.framework */; };
 		6835EBEE573570DD272FFF05 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6835EC2A874D2E1B6C14F1F4 /* Default-568h@2x.png */; };
@@ -55,6 +56,7 @@
 		6835EAED3B09A2A45A4917D1 /* TrainJazzz-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "TrainJazzz-Info.plist"; sourceTree = "<group>"; };
 		6835EB025DE7351C146405C7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6835EB26D75957D2F31C99D6 /* GCXStationLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCXStationLoader.m; sourceTree = "<group>"; };
+		6835EB4738A893703DE870D8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		6835EBA5956AC6927F545C92 /* GCXLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCXLine.h; sourceTree = "<group>"; };
 		6835EBDC0FEADFCF41BA3167 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		6835EC2A874D2E1B6C14F1F4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				6835EBA5956AC6927F545C92 /* GCXLine.h */,
 				D6305B8A1770FC4200645AB6 /* AnnotationCoordinateConverter.m */,
 				6835ED4C3DBDBADFA6109328 /* tooltip.png */,
+				6835EB4738A893703DE870D8 /* Icon.png */,
 			);
 			path = TrainJazzz;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				D6305B871770A47500645AB6 /* discover_map_icon-item-position.png in Resources */,
 				D6305B881770A47500645AB6 /* discover_map_icon-item-position@2x.png in Resources */,
 				6835E7420523CDFAFFD675FD /* tooltip.png in Resources */,
+				6835EAF8D1799D28F804DE69 /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
