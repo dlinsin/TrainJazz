@@ -13,7 +13,7 @@
 		6835E20E553F5083CD1C60DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6835E9FB007C46C994B5236C /* UIKit.framework */; };
 		6835E279EC7B79460EE68194 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6835EE11B0A89F942E919F03 /* MapKit.framework */; };
 		6835E343170C92987F99B4DA /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 6835E84FCD58A0D0FE1E57B7 /* sample.json */; };
-		6835E34D15548CDECD316284 /* GCXLineColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835E067C3FD959E8BC7C0B0 /* GCXLineColor.m */; };
+		6835E34D15548CDECD316284 /* PBXBuildFile */ = {isa = PBXBuildFile; fileRef = 6835E067C3FD959E8BC7C0B0 /* GCXLineColor.m */; };
 		6835E419255E4028B5EBC521 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6835EF95BED35964748D8755 /* CoreGraphics.framework */; };
 		6835E60BCA3F92354850FBA2 /* GCXStationLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835EB26D75957D2F31C99D6 /* GCXStationLoader.m */; };
 		6835E6E6688A4E114498B433 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6835E395DCABB0281F4E0EFD /* InfoPlist.strings */; };
@@ -25,8 +25,12 @@
 		6835EBC34670E585B78518CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6835EA466EDE400EA3AF9759 /* Foundation.framework */; };
 		6835EBEE573570DD272FFF05 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6835EC2A874D2E1B6C14F1F4 /* Default-568h@2x.png */; };
 		6835EE418C70155C13F3CCFB /* GCXViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6835ED796217D60D758ED6D2 /* GCXViewController.xib */; };
-		6835EE55D34018D97512F02B /* GCXCircleAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835E595475D680486B68184 /* GCXCircleAnnotationView.m */; };
+		6835EE55D34018D97512F02B /* PBXBuildFile */ = {isa = PBXBuildFile; fileRef = 6835E595475D680486B68184 /* GCXCircleAnnotationView.m */; };
 		6835EFBCD535B7E118802E3B /* GCXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835E7DBAE42176ECA44B578 /* GCXViewController.m */; };
+		D6305B871770A47500645AB6 /* discover_map_icon-item-position.png in Resources */ = {isa = PBXBuildFile; fileRef = D6305B851770A47500645AB6 /* discover_map_icon-item-position.png */; };
+		D6305B881770A47500645AB6 /* discover_map_icon-item-position@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6305B861770A47500645AB6 /* discover_map_icon-item-position@2x.png */; };
+		D6305B8B1770FC4200645AB6 /* AnnotationCoordinateConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = D6305B8A1770FC4200645AB6 /* AnnotationCoordinateConverter.m */; };
+		D6305B9017717FCF00645AB6 /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6305B8F17717FCF00645AB6 /* MKMapView+ZoomLevel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +65,12 @@
 		6835EEBA8E22F8A73AC2D4CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6835EF95BED35964748D8755 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6835EFFC1127A4DBD80BFA71 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		D6305B851770A47500645AB6 /* discover_map_icon-item-position.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "discover_map_icon-item-position.png"; sourceTree = "<group>"; };
+		D6305B861770A47500645AB6 /* discover_map_icon-item-position@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "discover_map_icon-item-position@2x.png"; sourceTree = "<group>"; };
+		D6305B891770FC4200645AB6 /* AnnotationCoordinateConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationCoordinateConverter.h; sourceTree = "<group>"; };
+		D6305B8A1770FC4200645AB6 /* AnnotationCoordinateConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationCoordinateConverter.m; sourceTree = "<group>"; };
+		D6305B8E17717FCF00645AB6 /* MKMapView+ZoomLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+ZoomLevel.h"; sourceTree = "<group>"; };
+		D6305B8F17717FCF00645AB6 /* MKMapView+ZoomLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+ZoomLevel.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +100,8 @@
 		6835E19B7B4695C22292B778 /* TrainJazzz */ = {
 			isa = PBXGroup;
 			children = (
+				D6305B8D17717FCF00645AB6 /* MKMapView+ZoomLevel */,
+				D6305B841770A47500645AB6 /* Images */,
 				6835E800090BA4BF4840EE90 /* Supporting Files */,
 				6835E2DCF8E766E1AFA269C2 /* GCXAppDelegate.h */,
 				6835E6897034408809D92D53 /* GCXAppDelegate.m */,
@@ -104,10 +116,10 @@
 				6835ECA286D3F4B71D0A8251 /* RNTimer */,
 				6835E076399CFC5FC28D876A /* GCXLine.m */,
 				6835EBA5956AC6927F545C92 /* GCXLine.h */,
-				6835E595475D680486B68184 /* GCXCircleAnnotationView.m */,
+				D6305B891770FC4200645AB6 /* AnnotationCoordinateConverter.h */,
 				6835E89096980DBE94802928 /* GCXCircleAnnotationView.h */,
 				6835E067C3FD959E8BC7C0B0 /* GCXLineColor.m */,
-				6835EA7430355AB028B920FE /* GCXLineColor.h */,
+				D6305B8A1770FC4200645AB6 /* AnnotationCoordinateConverter.m */,
 			);
 			path = TrainJazzz;
 			sourceTree = "<group>";
@@ -156,6 +168,24 @@
 			name = RNTimer;
 			path = RNTimer/RNTimer;
 			sourceTree = SOURCE_ROOT;
+		};
+		D6305B841770A47500645AB6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D6305B851770A47500645AB6 /* discover_map_icon-item-position.png */,
+				D6305B861770A47500645AB6 /* discover_map_icon-item-position@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		D6305B8D17717FCF00645AB6 /* MKMapView+ZoomLevel */ = {
+			isa = PBXGroup;
+			children = (
+				D6305B8E17717FCF00645AB6 /* MKMapView+ZoomLevel.h */,
+				D6305B8F17717FCF00645AB6 /* MKMapView+ZoomLevel.m */,
+			);
+			path = "MKMapView+ZoomLevel";
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -213,6 +243,8 @@
 				6835EBEE573570DD272FFF05 /* Default-568h@2x.png in Resources */,
 				6835EE418C70155C13F3CCFB /* GCXViewController.xib in Resources */,
 				6835E343170C92987F99B4DA /* sample.json in Resources */,
+				D6305B871770A47500645AB6 /* discover_map_icon-item-position.png in Resources */,
+				D6305B881770A47500645AB6 /* discover_map_icon-item-position@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,8 +262,8 @@
 				6835E60BCA3F92354850FBA2 /* GCXStationLoader.m in Sources */,
 				6835E0FF1C0C988CC53737DB /* RNTimer.m in Sources */,
 				6835E8C05F7D7FFEC21093BA /* GCXLine.m in Sources */,
-				6835EE55D34018D97512F02B /* GCXCircleAnnotationView.m in Sources */,
-				6835E34D15548CDECD316284 /* GCXLineColor.m in Sources */,
+				D6305B8B1770FC4200645AB6 /* AnnotationCoordinateConverter.m in Sources */,
+				D6305B9017717FCF00645AB6 /* MKMapView+ZoomLevel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

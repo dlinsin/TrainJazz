@@ -9,16 +9,20 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import "GCXViewController.h"
 #import "GCXStationLoader.h"
-#import "GCXCircleAnnotationView.h"
+#import "AnnotationCoordinateConverter.h"
+#import "MKMapView+ZoomLevel.h"
 
 @interface GCXViewController ()
 
 @property(nonatomic, strong) MKMapView *mapView;
 @property(nonatomic, strong) GCXStationLoader *loader;
-@property(nonatomic, strong) NSArray *stations;
+
 @end
 
 @implementation GCXViewController
+{
+    NSArray *allStations;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -54,16 +58,29 @@
 // will be called frequently with station updates
 - (void)stationsLoaded:(NSArray *)stations {
     NSLog(@"Loaded: %@", stations);
-    self.stations = stations;
+    
+    allStations = stations;
+    // add map annotations
     [self.mapView removeAnnotations:self.mapView.annotations];
-    [self.mapView addAnnotations:self.stations];
+    [AnnotationCoordinateConverter mutateCoordinatesOfClashingAnnotations:stations];
+    NSLog(@"converted: %@", stations);
+
+    [self.mapView addAnnotations:stations];
+    //    [self.mapView setCenterCoordinate:self.mapView.userLocation.coordinate zoomLevel:10 animated:NO];
 }
+
+
 
 #pragma mark -
 #pragma mark - MKMapViewDelegate
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
     // change on zoom
+    
+    NSUInteger zoomlevel = [mapView zoomLevel];
+    
+    
+    
 }
 
 - (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated {
@@ -72,10 +89,24 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
     NSLog(@"requesting annotation view");
-    MKAnnotationView *view = [[GCXCircleAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Blah"];
+    // create
+    static NSString *AnnotationViewID = @"AnnotationView";
+    MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
+    
+    if (annotationView == nil) {
+        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
+    }
 
-    return view;
+    
+    annotationView.image = [UIImage imageNamed:@"discover_map_icon-item-position"];
+    annotationView.annotation = annotation;
+    annotationView.canShowCallout = YES;
+//    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    
+    return annotationView;    
 }
+
+
 
 
 @end

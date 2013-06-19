@@ -24,7 +24,8 @@
                 NSLog(@"main: Caught %@: %@", [e name], [e reason]);
             }
         }
-
+        
+        _title = [NSString stringWithFormat:@" %@", _identifier] ;// [_identifier objectForKey:@"identifier"];
         NSMutableArray *tmpLines = [NSMutableArray array];
         for (NSDictionary *lineDict in _lines) {
             GCXLine *line = [[GCXLine alloc] initWithJson:lineDict];
