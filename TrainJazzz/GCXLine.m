@@ -23,6 +23,7 @@
                 NSLog(@"main: Caught %@: %@", [e name], [e reason]);
             }
         }
+        _title = [NSString stringWithFormat:@"%@ - %@ min", _line, _latency];
     }
 
     return self;
