@@ -14,6 +14,7 @@
 @interface GCXCircleAnnotationView ()
 @property(nonatomic, strong) UIColor *color;
 @property(nonatomic) BOOL halo;
+@property(nonatomic) NSInteger number;
 @end
 
 @implementation GCXCircleAnnotationView
@@ -29,10 +30,29 @@
         
         _color = color;
         _halo = showHalo;
+        _number = -1;
     }
 
     return self;
 }
+
+- (id)initWithAnnotation:(id <MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier number:(NSInteger)number {
+    self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
+    if (self) {
+        CGRect myFrame = self.frame;
+        myFrame.size.width = 100;
+        myFrame.size.height = 100;
+        self.frame = myFrame;
+        self.opaque = NO;
+
+        _color = [UIColor blackColor];
+        _halo = NO;
+        _number = number;
+    }
+
+    return self;
+}
+
 
 - (id)initWithAnnotation:(id <MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
@@ -45,6 +65,7 @@
 
         _color = [UIColor blackColor];
         _halo = NO;
+        _number = -1;
     }
 
     return self;
@@ -86,6 +107,15 @@
 
     [self.layer addSublayer:innerShape];
 
+    if (self.number > 0) {
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(45.0, 45.0, 10.0, 10.0)];
+        label.font = [UIFont systemFontOfSize:8.0f];
+        label.backgroundColor = [UIColor clearColor];
+        label.textColor = [UIColor whiteColor];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.text = [NSString stringWithFormat:@"%d", self.number];
+        [self addSubview:label];
+    }
 
 }
 

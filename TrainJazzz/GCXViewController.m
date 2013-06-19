@@ -137,8 +137,7 @@
     static NSString *AnnotationViewID = @"AnnotationView";
     MKAnnotationView *annotationView;
     if ([annotation isKindOfClass:[GCXStation class]]) {
-        annotationView = [[GCXCircleAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
-        
+        annotationView = [[GCXCircleAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID number:[((GCXStation *)annotation).lines count]];
     } else {
         GCXLine *line = (GCXLine*)annotation;
         UIColor *color = [[GCXLineColor sharedInstance] colorForLine:line.line];
@@ -146,7 +145,6 @@
         annotationView = [[GCXCircleAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID color:color halo:showHalo];
     }
 
-    
     return annotationView;    
 }
 
