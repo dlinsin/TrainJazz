@@ -157,12 +157,7 @@
         UIColor *color = [[GCXLineColor sharedInstance] colorForLine:line.line];
         BOOL showHalo = [line.latency intValue] >= kLatency;
         annotationView = [[GCXCircleAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID color:color halo:showHalo number:[line.line intValue]];
-        annotationView.canShowCallout = YES;
-        if (!showHalo) {
-            annotationView.calloutOffset = CGPointMake(0.0f, 40.0f);
-        } else {
-            annotationView.calloutOffset = CGPointMake(0.0f, 25.0f);
-        }
+        annotationView.canShowCallout = NO;
     }
 
     return annotationView;    
