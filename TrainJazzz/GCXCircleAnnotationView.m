@@ -77,7 +77,7 @@
 
     UIBezierPath *innerPath = [UIBezierPath bezierPath];
     [innerPath addArcWithCenter:CGPointMake(50.0, 50.0)
-                         radius:10.0f
+                         radius:20.0f
                      startAngle:0.0
                        endAngle:M_PI * 2.0
                       clockwise:YES];
@@ -86,13 +86,13 @@
     innerShape.path = [innerPath CGPath];
     innerShape.strokeColor = [[UIColor whiteColor] CGColor];
     innerShape.fillColor = [self.color CGColor];
-    innerShape.lineWidth = 1.0;
+    innerShape.lineWidth = 2.0;
 
     [self.layer addSublayer:innerShape];
 
     if (self.number > 0) {
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectIntegral(CGRectMake(44.5, 45.0, 10.0, 10.0))];
-        label.font = [UIFont systemFontOfSize:8.0f];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectIntegral(CGRectMake(40.0, 40.0, 20.0, 20.0))];
+        label.font = [UIFont boldSystemFontOfSize:16.0f];
         label.backgroundColor = [UIColor clearColor];
         label.textColor = [UIColor whiteColor];
         label.textAlignment = NSTextAlignmentCenter;
