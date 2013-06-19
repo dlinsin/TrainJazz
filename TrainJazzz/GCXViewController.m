@@ -14,6 +14,9 @@
 #import "GCXLine.h"
 #import "GCXStation.h"
 
+
+#define kLatency        2
+
 @interface GCXViewController ()
 
 @property(nonatomic, strong) MKMapView *mapView;
@@ -28,6 +31,7 @@
     NSArray *expandedStations;
     
     NSUInteger currentZoomLevel;
+    BOOL showExpanded;
 }
 
 - (void)viewDidLoad {
@@ -42,7 +46,8 @@
     startCoordinates.latitude = 50.937531;
     startCoordinates.longitude = 6.960279;
     self.mapView.region = MKCoordinateRegionMakeWithDistance(startCoordinates, 10000, 10000);
-    currentZoomLevel = [self.mapView zoomLevel];
+    
+    showExpanded = NO;
 //    [self.mapView setCenterCoordinate:startCoordinates zoomLevel:currentZoomLevel animated:NO];
     self.mapView.delegate = self;
     [self.mapView setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -56,6 +61,7 @@
     NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(map);
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[map]|" options:(NSLayoutFormatOptions) 0 metrics:nil views:viewsDictionary]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[map]|" options:(NSLayoutFormatOptions) 0 metrics:nil views:viewsDictionary]];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -70,6 +76,7 @@
 // will be called frequently with station updates
 - (void)stationsLoaded:(NSArray *)stations {
 //    NSLog(@"Loaded: %@", stations);
+    
     
     // add map annotations
     [self.mapView removeAnnotations:self.mapView.annotations];
@@ -89,12 +96,11 @@
     
     NSLog(@"expandedStations: %@", expandedStations);
     
-    [self.mapView addAnnotations:clusteredStations];
-//    CLLocationCoordinate2D startCoordinates;
-//    
-//    startCoordinates.latitude = 50.937531;
-//    startCoordinates.longitude = 6.960279;
-//    [self.mapView setCenterCoordinate:self.mapView.userLocation.coordinate zoomLevel:10 animated:NO];
+    if (showExpanded) {
+        [self.mapView addAnnotations:expandedStations];
+    } else 
+        [self.mapView addAnnotations:clusteredStations];
+    
 }
 
 
@@ -105,17 +111,24 @@
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
     // change on zoom
     
-    NSArray *stations = clusteredStations;
+    
     NSUInteger zoomlevel = [mapView zoomLevel];
+    
+    if (!expandedStations || !clusteredStations) {
+        return;
+    }
     
     if (zoomlevel == currentZoomLevel) {
         return;
     }
     
-    if (currentZoomLevel < zoomlevel) {
+    NSArray *stations = clusteredStations;
+    
+    showExpanded = currentZoomLevel < zoomlevel;
+    if (showExpanded) {
         //zoom in -> expand stations
         stations = expandedStations;
-        
+         
     } else {
         //zoom out -> collapse stations
         stations = clusteredStations;
@@ -142,7 +155,7 @@
     } else {
         GCXLine *line = (GCXLine*)annotation;
         UIColor *color = [[GCXLineColor sharedInstance] colorForLine:line.line];
-        BOOL showHalo = [line.latency intValue] >= 2;
+        BOOL showHalo = [line.latency intValue] >= kLatency;
         annotationView = [[GCXCircleAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID color:color halo:showHalo];
         annotationView.canShowCallout = YES;
         if (!showHalo) {
