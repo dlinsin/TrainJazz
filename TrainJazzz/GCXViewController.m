@@ -145,7 +145,7 @@
         
     } else {
         GCXLine *line = (GCXLine*)annotation;
-        UIColor *color = [UIColor redColor];//[[GCXLineColor sharedInstance] colorForLine:line.line];
+        UIColor *color = [[GCXLineColor sharedInstance] colorForLine:line.line];
         BOOL showHalo = [line.latency intValue] >= 2;
         annotationView = [[GCXCircleAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID color:color halo:showHalo];
     }
