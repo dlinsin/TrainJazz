@@ -19,7 +19,7 @@
 
 @implementation GCXCircleAnnotationView
 
-- (id)initWithAnnotation:(id <MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier color:(UIColor *)color halo:(BOOL)showHalo {
+- (id)initWithAnnotation:(id <MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier color:(UIColor *)color halo:(BOOL)showHalo number:(NSInteger)number{
     self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
     if (self) {
         CGRect myFrame = self.frame;
@@ -30,23 +30,6 @@
         
         _color = color;
         _halo = showHalo;
-        _number = -1;
-    }
-
-    return self;
-}
-
-- (id)initWithAnnotation:(id <MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier number:(NSInteger)number {
-    self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
-    if (self) {
-        CGRect myFrame = self.frame;
-        myFrame.size.width = 100;
-        myFrame.size.height = 100;
-        self.frame = myFrame;
-        self.opaque = NO;
-
-        _color = [UIColor blackColor];
-        _halo = NO;
         _number = number;
     }
 
@@ -108,7 +91,7 @@
     [self.layer addSublayer:innerShape];
 
     if (self.number > 0) {
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(45.0, 45.0, 10.0, 10.0)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectIntegral(CGRectMake(44.5, 45.0, 10.0, 10.0))];
         label.font = [UIFont systemFontOfSize:8.0f];
         label.backgroundColor = [UIColor clearColor];
         label.textColor = [UIColor whiteColor];
