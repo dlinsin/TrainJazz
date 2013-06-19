@@ -13,7 +13,6 @@
 		6835E20E553F5083CD1C60DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6835E9FB007C46C994B5236C /* UIKit.framework */; };
 		6835E279EC7B79460EE68194 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6835EE11B0A89F942E919F03 /* MapKit.framework */; };
 		6835E343170C92987F99B4DA /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 6835E84FCD58A0D0FE1E57B7 /* sample.json */; };
-		6835E34D15548CDECD316284 /* PBXBuildFile */ = {isa = PBXBuildFile; fileRef = 6835E067C3FD959E8BC7C0B0 /* GCXLineColor.m */; };
 		6835E419255E4028B5EBC521 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6835EF95BED35964748D8755 /* CoreGraphics.framework */; };
 		6835E5931B69A9785450EC05 /* GCXCircleAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835EC67954E5D72C8BA173D /* GCXCircleAnnotationView.m */; };
 		6835E60BCA3F92354850FBA2 /* GCXStationLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835EB26D75957D2F31C99D6 /* GCXStationLoader.m */; };
@@ -26,8 +25,8 @@
 		6835EBC34670E585B78518CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6835EA466EDE400EA3AF9759 /* Foundation.framework */; };
 		6835EBEE573570DD272FFF05 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6835EC2A874D2E1B6C14F1F4 /* Default-568h@2x.png */; };
 		6835EE418C70155C13F3CCFB /* GCXViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6835ED796217D60D758ED6D2 /* GCXViewController.xib */; };
-		6835EE55D34018D97512F02B /* PBXBuildFile */ = {isa = PBXBuildFile; fileRef = 6835E595475D680486B68184 /* GCXCircleAnnotationView.m */; };
 		6835EFBCD535B7E118802E3B /* GCXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835E7DBAE42176ECA44B578 /* GCXViewController.m */; };
+		B6F777591771C2650081B844 /* GCXLineColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F777571771C2650081B844 /* GCXLineColor.m */; };
 		D6305B871770A47500645AB6 /* discover_map_icon-item-position.png in Resources */ = {isa = PBXBuildFile; fileRef = D6305B851770A47500645AB6 /* discover_map_icon-item-position.png */; };
 		D6305B881770A47500645AB6 /* discover_map_icon-item-position@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6305B861770A47500645AB6 /* discover_map_icon-item-position@2x.png */; };
 		D6305B8B1770FC4200645AB6 /* AnnotationCoordinateConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = D6305B8A1770FC4200645AB6 /* AnnotationCoordinateConverter.m */; };
@@ -35,14 +34,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6835E067C3FD959E8BC7C0B0 /* GCXLineColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCXLineColor.m; sourceTree = "<group>"; };
 		6835E076399CFC5FC28D876A /* GCXLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCXLine.m; sourceTree = "<group>"; };
 		6835E0DC1D1EF1DE51C0C5A6 /* TrainJazzz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainJazzz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6835E0FB9A556FE65497C065 /* GCXStationLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCXStationLoader.h; sourceTree = "<group>"; };
 		6835E1646A386A7022A18C31 /* GCXViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCXViewController.h; sourceTree = "<group>"; };
 		6835E2C4DB88A4BE6B6B0DCF /* GCXStation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCXStation.m; sourceTree = "<group>"; };
 		6835E2DCF8E766E1AFA269C2 /* GCXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCXAppDelegate.h; sourceTree = "<group>"; };
-		6835E595475D680486B68184 /* GCXCircleAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCXCircleAnnotationView.m; sourceTree = "<group>"; };
 		6835E5C9D281F14E0370E4B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GCXViewController.xib; sourceTree = "<group>"; };
 		6835E6897034408809D92D53 /* GCXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCXAppDelegate.m; sourceTree = "<group>"; };
 		6835E6E5B4AAD66A25E7921E /* RNTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNTimer.m; sourceTree = "<group>"; };
@@ -55,7 +52,6 @@
 		6835EA0B00F4BD91BA374F19 /* GCXStation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCXStation.h; sourceTree = "<group>"; };
 		6835EA466EDE400EA3AF9759 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6835EA4B550F4C339914C872 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6835EA7430355AB028B920FE /* GCXLineColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCXLineColor.h; sourceTree = "<group>"; };
 		6835EAED3B09A2A45A4917D1 /* TrainJazzz-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "TrainJazzz-Info.plist"; sourceTree = "<group>"; };
 		6835EB025DE7351C146405C7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6835EB26D75957D2F31C99D6 /* GCXStationLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCXStationLoader.m; sourceTree = "<group>"; };
@@ -67,6 +63,8 @@
 		6835EEBA8E22F8A73AC2D4CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6835EF95BED35964748D8755 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6835EFFC1127A4DBD80BFA71 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B6F777571771C2650081B844 /* GCXLineColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCXLineColor.m; sourceTree = "<group>"; };
+		B6F777581771C2650081B844 /* GCXLineColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCXLineColor.h; sourceTree = "<group>"; };
 		D6305B851770A47500645AB6 /* discover_map_icon-item-position.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "discover_map_icon-item-position.png"; sourceTree = "<group>"; };
 		D6305B861770A47500645AB6 /* discover_map_icon-item-position@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "discover_map_icon-item-position@2x.png"; sourceTree = "<group>"; };
 		D6305B891770FC4200645AB6 /* AnnotationCoordinateConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationCoordinateConverter.h; sourceTree = "<group>"; };
@@ -102,6 +100,8 @@
 		6835E19B7B4695C22292B778 /* TrainJazzz */ = {
 			isa = PBXGroup;
 			children = (
+				B6F777571771C2650081B844 /* GCXLineColor.m */,
+				B6F777581771C2650081B844 /* GCXLineColor.h */,
 				D6305B8D17717FCF00645AB6 /* MKMapView+ZoomLevel */,
 				D6305B841770A47500645AB6 /* Images */,
 				6835E800090BA4BF4840EE90 /* Supporting Files */,
@@ -120,7 +120,6 @@
 				6835EBA5956AC6927F545C92 /* GCXLine.h */,
 				D6305B891770FC4200645AB6 /* AnnotationCoordinateConverter.h */,
 				6835E89096980DBE94802928 /* GCXCircleAnnotationView.h */,
-				6835E067C3FD959E8BC7C0B0 /* GCXLineColor.m */,
 				D6305B8A1770FC4200645AB6 /* AnnotationCoordinateConverter.m */,
 				6835EC67954E5D72C8BA173D /* GCXCircleAnnotationView.m */,
 			);
@@ -268,6 +267,7 @@
 				D6305B8B1770FC4200645AB6 /* AnnotationCoordinateConverter.m in Sources */,
 				D6305B9017717FCF00645AB6 /* MKMapView+ZoomLevel.m in Sources */,
 				6835E5931B69A9785450EC05 /* GCXCircleAnnotationView.m in Sources */,
+				B6F777591771C2650081B844 /* GCXLineColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

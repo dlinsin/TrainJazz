@@ -6,12 +6,13 @@
 //  Copyright (c) 2013 grandcentrix GmbH. All rights reserved.
 //
 
-#import <CoreGraphics/CoreGraphics.h>
 #import "GCXViewController.h"
-#import "GCXStationLoader.h"
 #import "AnnotationCoordinateConverter.h"
 #import "MKMapView+ZoomLevel.h"
 #import "GCXCircleAnnotationView.h"
+#import "GCXStation.h"
+#import "GCXLine.h"
+#import "GCXLineColor.h"
 
 @interface GCXViewController ()
 
@@ -90,10 +91,21 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
     NSLog(@"requesting annotation view");
-    // create
     static NSString *AnnotationViewID = @"AnnotationView";
+    MKAnnotationView *annotationView;
+    if ([annotation isKindOfClass:[GCXStation class]]) {
+        annotationView = [[GCXCircleAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
+    } else {
+        NSString *line = [(GCXLine *) annotation line];
+        NSString *time = [(GCXLine *) annotation latency];
+        UIColor *color = [[GCXLineColor sharedInstance] colorForLine:line];
+        BOOL halo = YES;
+        if ([time isEqualToString:@"0"]) {
+            halo = NO;
+        }
+        annotationView = [[GCXCircleAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID color:color halo:halo];
+    }
     // TODO rausfinden ob linie oder station und dann farbe rausfinden
-    MKAnnotationView *annotationView = [[GCXCircleAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
 
 //    MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
     
