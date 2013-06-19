@@ -30,6 +30,7 @@
         [lines setObject:[UIColor colorWithRed:127.0f/255.0f green:191.0f/255.0f blue:85.0f/255.0f alpha:1.0f] forKey:@"12"];
         [lines setObject:[UIColor colorWithRed:170.0f/255.0f green:223.0f/255.0f blue:85.0f/255.0f alpha:1.0f] forKey:@"6"];
         [lines setObject:[UIColor colorWithRed:170.0f/255.0f green:159.0f/255.0f blue:170.0f/255.0f alpha:1.0f] forKey:@"5"];
+        [lines setObject:[UIColor colorWithRed:170.0f/255.0f green:134.0f/255.0f blue:103.0f/255.0f alpha:1.0f] forKey:@"13"];
         [sharedInstance setLineColors:lines];
     });
     return sharedInstance;

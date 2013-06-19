@@ -16,6 +16,7 @@
 		6835E419255E4028B5EBC521 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6835EF95BED35964748D8755 /* CoreGraphics.framework */; };
 		6835E60BCA3F92354850FBA2 /* GCXStationLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835EB26D75957D2F31C99D6 /* GCXStationLoader.m */; };
 		6835E6E6688A4E114498B433 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6835E395DCABB0281F4E0EFD /* InfoPlist.strings */; };
+		6835E7420523CDFAFFD675FD /* tooltip.png in Resources */ = {isa = PBXBuildFile; fileRef = 6835ED4C3DBDBADFA6109328 /* tooltip.png */; };
 		6835E8C05F7D7FFEC21093BA /* GCXLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6835E076399CFC5FC28D876A /* GCXLine.m */; };
 		6835E90A8811D193E09ED5C1 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6835EBDC0FEADFCF41BA3167 /* Default.png */; };
 		6835E9167C39117F6061DDF3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6835EB025DE7351C146405C7 /* QuartzCore.framework */; };
@@ -57,6 +58,7 @@
 		6835EBA5956AC6927F545C92 /* GCXLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCXLine.h; sourceTree = "<group>"; };
 		6835EBDC0FEADFCF41BA3167 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		6835EC2A874D2E1B6C14F1F4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		6835ED4C3DBDBADFA6109328 /* tooltip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tooltip.png; sourceTree = "<group>"; };
 		6835EE11B0A89F942E919F03 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6835EEBA8E22F8A73AC2D4CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6835EF95BED35964748D8755 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -122,6 +124,7 @@
 				6835E076399CFC5FC28D876A /* GCXLine.m */,
 				6835EBA5956AC6927F545C92 /* GCXLine.h */,
 				D6305B8A1770FC4200645AB6 /* AnnotationCoordinateConverter.m */,
+				6835ED4C3DBDBADFA6109328 /* tooltip.png */,
 			);
 			path = TrainJazzz;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				6835E343170C92987F99B4DA /* sample.json in Resources */,
 				D6305B871770A47500645AB6 /* discover_map_icon-item-position.png in Resources */,
 				D6305B881770A47500645AB6 /* discover_map_icon-item-position@2x.png in Resources */,
+				6835E7420523CDFAFFD675FD /* tooltip.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

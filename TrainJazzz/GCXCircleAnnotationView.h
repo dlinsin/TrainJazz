@@ -13,6 +13,6 @@
 
 @interface GCXCircleAnnotationView : MKAnnotationView
 
-- (id)initWithAnnotation:(id <MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier color:(UIColor *)color halo:(BOOL)showHalo number:(NSInteger)number;
+- (id)initWithAnnotation:(id <MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier color:(UIColor *)color halo:(BOOL)showHalo number:(NSInteger)number mins:(NSString*)mins;
 
 @end

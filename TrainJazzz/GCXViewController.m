@@ -156,7 +156,7 @@
         GCXLine *line = (GCXLine*)annotation;
         UIColor *color = [[GCXLineColor sharedInstance] colorForLine:line.line];
         BOOL showHalo = [line.latency intValue] >= kLatency;
-        annotationView = [[GCXCircleAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID color:color halo:showHalo number:[line.line intValue]];
+        annotationView = [[GCXCircleAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID color:color halo:showHalo number:[line.line intValue] mins:line.latency];
         annotationView.canShowCallout = NO;
     }
 
@@ -165,10 +165,12 @@
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
     NSLog(@"selected view");
+    [view viewWithTag:12].hidden = NO;
 }
 
 - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view {
     NSLog(@"de-selected view");
+    [view viewWithTag:12].hidden = YES;
 }
 
 

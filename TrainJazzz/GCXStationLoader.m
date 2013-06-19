@@ -44,7 +44,7 @@
     }
 
     NSString *url = [NSString stringWithFormat:@"http://10.197.197.210:9000/test"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:10.0];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:1.0];
     self.connection = [NSURLConnection connectionWithRequest:request delegate:self];
 }
 
