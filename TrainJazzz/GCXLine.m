@@ -38,5 +38,32 @@
     return description;
 }
 
+- (BOOL)isEqual:(id)other {
+    if (other == self)
+        return YES;
+    if (!other || ![[other class] isEqual:[self class]])
+        return NO;
+
+    return [self isEqualToLine:other];
+}
+
+- (BOOL)isEqualToLine:(GCXLine *)line {
+    if (self == line)
+        return YES;
+    if (line == nil)
+        return NO;
+    if (self.line != line.line && ![self.line isEqualToString:line.line])
+        return NO;
+    if (self.latency != line.latency && ![self.latency isEqualToString:line.latency])
+        return NO;
+    return YES;
+}
+
+- (NSUInteger)hash {
+    NSUInteger hash = [self.line hash];
+    hash = hash * 31u + [self.latency hash];
+    return hash;
+}
+
 
 @end

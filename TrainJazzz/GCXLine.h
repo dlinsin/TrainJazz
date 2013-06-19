@@ -22,4 +22,10 @@
 - (id)initWithJson:(NSDictionary *)json;
 
 - (NSString *)description;
+
+- (BOOL)isEqual:(id)other;
+
+- (BOOL)isEqualToLine:(GCXLine *)line;
+
+- (NSUInteger)hash;
 @end
