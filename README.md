@@ -1,4 +1,4 @@
 TramSpotter
 =========
 
-iOS Client visualizing KVB train stations
+iOS Client visualizing trains departing at KVB train stations in real time. 
